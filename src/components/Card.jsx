@@ -1,8 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
   return (
-    <div className="card" style={{ width: "18rem", margin: "10px" }}>
+    <div
+      key={data.id}
+      className="card"
+      style={{ width: "18rem", margin: "10px" }}
+    >
       <img src={data.img} className="card-img-top" alt={data.name} />
       <div className="card-body">
         <h5 className="card-title">{data.name}</h5>
@@ -12,6 +17,9 @@ const Card = ({ data }) => {
           Run: {data.run} km <br />
           Price: ${data.price}
         </p>
+        <Link to={`/shopdetail/${data.id}`} className="btn btn-primary">
+          Details
+        </Link>
       </div>
     </div>
   );
