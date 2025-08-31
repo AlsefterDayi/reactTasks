@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./components/Header";
-import Shop from "./pages/Shop";
-import Home from "./pages/home";
+import Shop from "./Modules/Shop/View/Shop";
+import Home from "./Modules/home";
 import { Routes, Route } from "react-router-dom";
-import ShopDetail from "./pages/shop/ShopDetail";
+import ShopDetail from "./Modules/Shop/View/Shopdetail";
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shopdetail/:itemid" element={<ShopDetail />} />
+        <Route path="/Shop" element={<Shop />} />
+        <Route path="/Shopdetail/:itemid" element={<ShopDetail />} />
       </Routes>
     </>
   );

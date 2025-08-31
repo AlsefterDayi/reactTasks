@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
   return (
+    console.log(data),
     <div
-      key={data.id}
       className="card"
       style={{ width: "18rem", margin: "10px" }}
+      key={data.id}
     >
       <img src={data.img} className="card-img-top" alt={data.name} />
       <div className="card-body">

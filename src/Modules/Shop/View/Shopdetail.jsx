@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import cars from "../../data/cars";
+import cars from "../../../db/cars";
 
 const Shopdetail = () => {
   const { itemid } = useParams();
