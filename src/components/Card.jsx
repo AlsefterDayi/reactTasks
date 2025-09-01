@@ -2,23 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
+  const { id, name, img, year, vol, run, price } = data;
   return (
-    console.log(data),
     <div
       className="card"
       style={{ width: "18rem", margin: "10px" }}
-      key={data.id}
+      key={id}
     >
-      <img src={data.img} className="card-img-top" alt={data.name} />
+      <img src={img} className="card-img-top" alt={name} />
       <div className="card-body">
-        <h5 className="card-title">{data.name}</h5>
+        <h5 className="card-title">{name}</h5>
         <p className="card-text">
-          Year: {data.year} <br />
-          Engine: {data.vol} L <br />
-          Run: {data.run} km <br />
-          Price: ${data.price}
+          Year: {year} <br />
+          Engine: {vol} L <br />
+          Run: {run} km <br />
+          Price: ${price}
         </p>
-        <Link to={`/shopdetail/${data.id}`} className="btn btn-primary">
+        <Link to={`/shopdetail/${id}`} className="btn btn-primary">
           Details
         </Link>
       </div>
