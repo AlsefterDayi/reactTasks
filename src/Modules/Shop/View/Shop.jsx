@@ -7,13 +7,12 @@ const Shop = () => {
   const GetData = async () => {
     try {
       const res = await ShopService.ProductList();
-      setProducts(res.data);
-    } 
-    catch (error) {
+      setProducts(res);
+    } catch (error) {
       console.log(error);
     }
   };
-  
+
   useEffect(() => {
     GetData();
   }, []);
