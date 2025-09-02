@@ -1,13 +1,29 @@
-import React from "react";
-import cars from "../../../db/cars";
+import React, { useEffect, useState } from "react";
 import Card from "../../../components/Card";
+import { ShopService } from "../Services/ShopService";
 
 const Shop = () => {
+  const [products, setProducts] = useState([]);
+  const GetData = async () => {
+    try {
+      const res = await ShopService.ProductList();
+      setProducts(res.data);
+    } 
+    catch (error) {
+      console.log(error);
+    }
+  };
+  
+  useEffect(() => {
+    GetData();
+  }, []);
   return (
-    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-      {cars.map((car) => (
-        <Card data={car} />
-      ))}
+    <div className="container">
+      <div className="row">
+        {products.map((data) => (
+          <Card data={data} />
+        ))}
+      </div>
     </div>
   );
 };
