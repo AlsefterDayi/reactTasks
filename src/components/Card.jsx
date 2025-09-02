@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({ data }) => {
+const Card = ({ data } ) => {
   const { id, name, img, year, vol, run, price } = data;
   return (
     <div
+      key={id}
       className="card"
       style={{ width: "18rem", margin: "10px" }}
-      key={id}
     >
       <img src={img} className="card-img-top" alt={name} />
       <div className="card-body">
