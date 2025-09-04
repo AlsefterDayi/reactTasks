@@ -18,9 +18,9 @@ const Shop = () => {
   }, []);
   return (
     <div className="container">
-      <div className="row">
+      <div className="row shopList">
         {products.map((data) => (
-          <Card data={data} />
+          <Card data={data} key={data.id} />
         ))}
       </div>
     </div>
