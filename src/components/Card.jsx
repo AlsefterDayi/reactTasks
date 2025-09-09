@@ -14,7 +14,7 @@ const Card = ({ data }) => {
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">Price: ${price}</p>
-          <Link className="addCart btn btn-primary">Add to Cart</Link>
+          {/* <Link className="addCart btn btn-primary">Add to Cart</Link> */}
         </div>
       </div>
     </Link>
