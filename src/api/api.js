@@ -3,7 +3,7 @@ const endpoints = {
 };
 
 const $api = (key) => {
-  return import.meta.env.VITE_BASE_URL + endpoints[key];
+  return import.meta.env.VITE_BASE_PRODUCT_URL + endpoints[key];
 };
 
 export default $api;

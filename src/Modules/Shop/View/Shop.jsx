@@ -11,7 +11,6 @@ const Shop = () => {
       const { products, categories } = await ShopService.ProductList();
       setProducts(products);
       setCategory(categories);
-      
     } catch (error) {
       console.log(error);
     }
@@ -20,7 +19,7 @@ const Shop = () => {
   useEffect(() => {
     GetData();
   }, []);
-    console.log(category);
+  console.log(category);
 
   return (
     <div className="container">
@@ -29,7 +28,7 @@ const Shop = () => {
       </div>
       <div className="row shopList">
         {products.map((data) => (
-          <Card data={data} key={data.id} />
+          <Card productData={data} key={data.id} />
         ))}
       </div>
     </div>
